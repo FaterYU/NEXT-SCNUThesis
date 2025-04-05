@@ -144,8 +144,8 @@
 % 设置 subsection 段前空一行
 \titlespacing{\subsection}
   {0pt} % 左缩进
-  {0\baselineskip} % 段前间距（1行）
-  {1\baselineskip} % 段后间距
+  {1\baselineskip} % 段前间距（1行）
+  {0\baselineskip} % 段后间距
 
 % ---------- 目录标题格式 ----------
 \renewcommand{\contentsname}{\hfill\bfseries\Large \zihao{-2} \hei \bfseries 目\quad 录\hfill}   
