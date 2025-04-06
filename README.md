@@ -43,3 +43,7 @@
 🔗 [scnuthesis](https://github.com/scnu/scnuthesis)
 🔗 [University of Aberdeen thesis template](https://www.overleaf.com/latex/templates/university-of-aberdeen-thesis-template/jzrbyqmggygd)
 🔗 [SCNU-ABD-Thesis-template](https://github.com/kikixiong/SCNU-ABD-Thesis-template)
+
+## ⭐
+
+[![Star History Chart](https://api.star-history.com/svg?repos=FaterYU/NEXT-SCNUThesis&type=Date)](https://www.star-history.com/#FaterYU/NEXT-SCNUThesis&Date)
