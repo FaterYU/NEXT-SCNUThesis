@@ -16,8 +16,11 @@
 ## 特性
 
 🔥 基本符合华南师范大学本科毕业论文格式要求
+
 🔥 更好的中英混排
+
 🔥 更高级别的封装
+
 🔥 从英文模板无痛迁移
 
 ## 使用方法
@@ -41,7 +44,9 @@
 ## 参考
 
 🔗 [scnuthesis](https://github.com/scnu/scnuthesis)
+
 🔗 [University of Aberdeen thesis template](https://www.overleaf.com/latex/templates/university-of-aberdeen-thesis-template/jzrbyqmggygd)
+
 🔗 [SCNU-ABD-Thesis-template](https://github.com/kikixiong/SCNU-ABD-Thesis-template)
 
 ## ⭐
