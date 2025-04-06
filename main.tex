@@ -1,40 +1,50 @@
 \documentclass{scnuthesis}
 
-\title{Next SCNU Thesis}
-\author{郑誉}
-\studentid{20210000000}
-\majorclass{xxx}
-\supervisor{xxx}
-\date{2025年4月}
+% == 导入宏包 ==
 
-\keywordsen{xxx; xxx; xxx}
-\keywordszh{xxx, xxx, xxx}
+% =================
+
+\title{Next SCNU Thesis} % 论文题目
+\author{郑誉} % 姓名
+\studentid{20210000000} % 学号
+\majorclass{xxx} % 专业班级
+\supervisor{xxx} % 指导教师
+\date{2025年4月} % 日期
+
+\keywordsen{xxx; xxx; xxx} % 英文关键词
+\keywordszh{xxx, xxx, xxx} % 中文关键词
 
 \begin{document}
     \maketitle
 
     \begin{abstracten}
+        % 英文摘要
     \end{abstracten}
 
     \begin{abstractzh}
+        % 中文摘要
     \end{abstractzh}
 
+    % == 目录 ==
     \toc
+    % =========
 
-    \chapteren{MAIN BODY}
+    % == 正文 ==
+    % 推荐使用 \include{xxx} 来分章节
+    \chapter{MAIN BODY}
+    % =========
 
-    \section{Introduction}
-    \section{Related Work}
-    \section{Methodology}
-    \section{Experiments}
-    \section{Results}
-    \section{Conclusion}
-
+    % == 参考文献 ==
     \reference{reference}
+    % =========
+
+    % == 附录 ==
+    % 推荐使用 \include{xxx} 插入附录
     \appendix
     \section{Appendix A}
     \section{Appendix B}
     \section{Appendix C}
+    % =========
 
     \acknowledgements
 \end{document}

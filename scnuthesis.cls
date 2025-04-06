@@ -20,9 +20,19 @@
 \RequirePackage{newtxtext}
 \RequirePackage{newtxmath}
 \RequirePackage{gbt7714}
+\RequirePackage{booktabs}
+\RequirePackage{graphicx}
+\RequirePackage{float}
+\RequirePackage{xcolor}
+\RequirePackage{textcomp}
+\RequirePackage{ulem}
+\RequirePackage{multirow}
+\RequirePackage{multicol}
+\RequirePackage{enumitem}
+\RequirePackage[ruled, vlined]{algorithm2e}
+\RequirePackage{algpseudocode}
 
 
-% \newcommand{\tnr}{\timesnewroman}       % Times New Roman
 \newcommand{\song}{\CJKfamily{zhsong}} % 宋体
 \newcommand{\fs}{\CJKfamily{zhfs}}      % 仿宋
 \newcommand{\kai}{\CJKfamily{zhkai}}      % 楷体
@@ -70,6 +80,7 @@
 \newcommand{\keywordsen}[1]{\gdef\@keywordsen{#1}}
 \newenvironment{abstracten}{
   \clearpage
+  \phantomsection
   \begin{center}
     {\zihao{-2} \bfseries  ABSTRACT} \\[1em]
   \end{center}
@@ -78,7 +89,7 @@
   \setlength{\parindent}{24pt}
   \ignorespaces
   \setlength{\parskip}{1em}
-  \addcontentsline{toc}{chapteren}{\zihao{-4}  ABSTRACT}
+  \addcontentsline{toc}{chapter}{\zihao{-4}  ABSTRACT}
 }{
   \par
   \vspace{1em}
@@ -93,20 +104,21 @@
 \newcommand{\keywordszh}[1]{\gdef\@keywordszh{#1}}
 \newenvironment{abstractzh}{
   \clearpage
+  \phantomsection
   \begin{center}
-    {\zihao{-2} \bfseries \song 摘\quad 要} \\[1em]
+    {\zihao{-2} \bfseries \hei 摘\quad 要} \\[1em]
   \end{center}
   \hspace{12pt}
   \zihao{-4} \song
   \setlength{\parindent}{24pt}
   \ignorespaces
   \setlength{\parskip}{1em}
-  \addcontentsline{toc}{chapterzh}{\zihao{-4} \song 摘\quad 要}
+  \addcontentsline{toc}{chapter}{\zihao{-4} \song 摘\quad 要}
 }{
   \par
   \vspace{1em}
   \noindent
-  {\zihao{-4} \bfseries \song 关键词\quad ：}
+  {\zihao{-4} \bfseries \hei 关键词\quad ：}
   {\zihao{-4} \song \@keywordszh}
   \clearpage
 }
@@ -116,11 +128,12 @@
 \renewcommand\thesubsubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}} % 小小节编号格式
 
 % ====== chapter 标题居中 ======
-\titleformat{\chapter}[display] % 针对 \chapter 命令
-  {\centering \zihao{-2}  \bfseries} % 居中 + 三号黑体加粗
+\titleformat{\chapter}[display] % 针对 \chapteren 命令
+  {\centering \zihao{-2} \hei \bfseries} % 居中 + 小二号黑体加粗
   {\chaptertitlename\ \thechapter} % 标签格式（如“第1章”）
   {20pt} % 标签与标题间距
   {\zihao{-2}  \bfseries} % 标题字体
+
 
 % ====== section 标题左对齐 ======
 \titleformat{\section}
@@ -141,48 +154,32 @@
   {\thesubsection} % 标签（如“1.1.1”）
   {1em} % 标签与标题间距
   {} % 标题内容格式
+
 % 设置 subsection 段前空一行
 \titlespacing{\subsection}
   {0pt} % 左缩进
   {1\baselineskip} % 段前间距（1行）
   {0\baselineskip} % 段后间距
 
+% ====== subsubsection 标题左对齐 ======
+\titleformat{\subsubsection}
+  {\raggedright \zihao{-4}} % 左对齐 + 小四号黑体加粗
+  {\thesubsubsection} % 标签（如“1.1.1.1”）
+  {1em} % 标签与标题间距
+  {} % 标题内容格式
+
+
 % ---------- 目录标题格式 ----------
 \renewcommand{\contentsname}{\hfill\bfseries\Large \zihao{-2} \hei \bfseries 目\quad 录\hfill}   
 \renewcommand{\cftaftertoctitle}{\hfill}
 
 % ---------- 中文章节目录条目配置 ----------
-\titlecontents{chapterzh}[0pt] % 层级名称
+\titlecontents{chapter}[0pt] % 层级名称
   {\addvspace{6pt} \zihao{-4} \song} % 整体格式（小四号宋体）
-  {\contentslabel[\hspace*{1.5em}第\thecontentslabel 章\hspace*{1.5em}]{4.5em}} % 标签格式（如"第1章"）
+  {} % 标签格式
   {} 
   {\titlerule*[0.5pc]{.}\contentspage} % 引导线 + 页码（点线引导）
   [\addvspace{3pt}] % 条目间距
-
-% ---------- 英文章节目录条目配置 ----------
-\titlecontents{chapteren}[0pt]
-  {\addvspace{6pt} \zihao{-4}}
-  {\contentslabel[\hspace*{1.5em}Chapter~\thecontentslabel\hspace*{1.5em}]{6em}} % 标签格式（如"Chapter 1"）
-  {}
-  {\titlerule*[0.5pc]{.}\contentspage}
-  [\addvspace{3pt}]
-
-% ---------- 章节命令定义 ----------
-\newcommand{\chapterzh}[1]{%
-  \chapter*{#1}
-  \addcontentsline{toc}{chapterzh}{#1} % 添加中文目录条目
-  \markboth{#1}{} % 页眉标记（按需调整）
-  \addtocounter{chapter}{1} % 章节计数器加1
-  \setcounter{section}{0} % 重置小节计数器
-}
-
-\newcommand{\chapteren}[1]{%
-  \chapter*{#1}
-  \addcontentsline{toc}{chapteren}{#1} % 添加英文目录条目
-  \markboth{#1}{}
-  \addtocounter{chapter}{1} % 章节计数器加1
-  \setcounter{section}{0} % 重置小节计数器
-}
 
 % ---------- 生成目录命令 ----------
 \newcommand{\toc}{
@@ -202,10 +199,13 @@
 \renewcommand{\bibname}{\zihao{-2}  REFERENCES} % 参考文献标题
 \newcommand{\reference}[1]{%
   \clearpage
-  \addcontentsline{toc}{chapteren}{\zihao{-4}  REFERENCES} % 添加参考文献目录条目
+  \begingroup
   \setstretch{1.5} % 1.5倍行距
   \setlength{\parindent}{0pt} % 段首不缩进
+  \addcontentsline{toc}{chapter}{\zihao{-4}  REFERENCES} % 添加参考文献目录条目
+  \phantomsection
   \bibliography{#1}
+  \endgroup
 }
 
 \renewcommand{\appendix}{%
@@ -213,7 +213,8 @@
   \setcounter{section}{0} % 重置小节计数器
   \renewcommand{\thesection}{.\arabic{section}} % 设置附录小节编号格式
   \clearpage
-  \addcontentsline{toc}{chapteren}{\zihao{-4}  APPENDIX} % 添加附录目录条目
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\zihao{-4}  APPENDIX} % 添加附录目录条目
   \begin{center}
     {\zihao{-2}  \bfseries APPENDIX} % 附录标题
     \vspace{1em}
@@ -222,7 +223,8 @@
 
 \newcommand{\acknowledgements}{%
   \clearpage
-  \addcontentsline{toc}{chapterzh}{\zihao{-4}  ACKNOWLEDGEMENTS} % 添加致谢目录条目
+  \phantomsection
+  \addcontentsline{toc}{chapter}{\zihao{-4}  ACKNOWLEDGEMENTS} % 添加致谢目录条目
   \begin{center}
     {\zihao{-2}  \bfseries ACKNOWLEDGEMENTS} % 致谢标题
     \vspace{1em}
@@ -238,3 +240,18 @@
 \renewcommand{\thefootnote}{\arabic{footnote}} % 脚注编号格式
 \renewcommand{\figurename}{\zihao{5} Fig.} % 图标题格式
 \renewcommand{\tablename}{\zihao{5} Table} % 表标题格式
+
+\makeatletter % 允许修改带 @ 的宏
+% 重定义 \@makecaption 命令
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{\zihao{5} #1\quad#2}
+  \ifdim \wd\@tempboxa >\hsize
+    {\zihao{5} #1\quad#2\par} % 标题过长时换行
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}% 居中标题
+  \fi
+  \vskip\belowcaptionskip
+}
+\makeatother % 恢复 @ 符号的默认行为
