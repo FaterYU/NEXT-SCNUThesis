@@ -39,7 +39,7 @@
 
 若已经使用 / 计划使用此模板，希望能花1分钟完成以下表单，若有交流需要可加q群： 963592181
 
-<iframe width="640px" height="480px" src="https://forms.office.com/e/ESdiTbCaPt?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+[点击此处填写反馈表单](https://forms.office.com/e/ESdiTbCaPt)
 
 ## 遇到问题❓
 
