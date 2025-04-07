@@ -11,7 +11,7 @@
 
 ## 👀 预览
 
-![preview](fig/example.png)
+![preview](https://github.com/user-attachments/assets/2e7ffa9a-6d68-47a2-8764-3ca2a400bea8)
 
 ## 特性
 

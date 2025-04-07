@@ -1,12 +1,13 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{scnuthesis}[2023/10/01 v1.0.0 SCNU Thesis Class]
+\ProvidesClass{NEXT-SCNUThesis}[2025/04/07 v1.0.0 SCNU Thesis Class]
 \LoadClass[a4paper,12pt]{report}
 
 \RequirePackage{graphicx}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsfonts}
-\RequirePackage[margin=1in]{geometry}
+\RequirePackage{geometry}
+\geometry{top=1in, bottom=1in, left=1in, right=1in, bindingoffset=0.5cm} % 设置页边距
 \RequirePackage{ctex}
 \RequirePackage{array}
 \RequirePackage{indentfirst}
@@ -56,19 +57,19 @@
     \vfill
   \begin{center}
     {\zihao{2}  \bfseries \@title \par}
-    \vspace{4em} % 调整标题下方间距
+    \vspace{8em} % 调整标题下方间距
 
-    \begin{tabular}{@{}>{\centering\arraybackslash}p{5cm}@{}>{\centering\arraybackslash}p{8cm}@{}}
+    \begin{tabular}{@{}>{\centering\arraybackslash}p{4cm}@{}>{\centering\arraybackslash}p{5cm}@{}}
     {\zihao{3} \fs \bfseries 学生姓名}   & 
-      {\zihao{3} \song \makebox[8cm][c]{\@author} \par \nointerlineskip \hrule width 8cm height 0.4pt} \\[1.2em]
+      {\zihao{3} \song \makebox[8cm][c]{\@author} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[2em] % 增加行间距至 2em
     {\zihao{3} \fs \bfseries 学\qquad 号} & 
-      {\zihao{3} \song \makebox[8cm][c]{\@studentid} \par \nointerlineskip \hrule width 8cm height 0.4pt} \\[1.2em]
+      {\zihao{3} \song \makebox[8cm][c]{\@studentid} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[2em]
     {\zihao{3} \fs \bfseries 专业班级}    & 
-      {\zihao{3} \song \makebox[8cm][c]{\@majorclass} \par \nointerlineskip \hrule width 8cm height 0.4pt} \\[1.2em]
+      {\zihao{3} \song \makebox[8cm][c]{\@majorclass} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[2em]
     {\zihao{3} \fs \bfseries 指导老师}    & 
-      {\zihao{3} \song \makebox[8cm][c]{\@supervisor} \par \nointerlineskip \hrule width 8cm height 0.4pt} \\[1.2em]
+      {\zihao{3} \song \makebox[8cm][c]{\@supervisor} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[2em]
     {\zihao{3} \fs \bfseries 完成日期}    & 
-      {\zihao{3} \song \makebox[8cm][c]{\@date} \par \nointerlineskip \hrule width 8cm height 0.4pt} \\[1.2em]
+      {\zihao{3} \song \makebox[8cm][c]{\@date} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[2em]
   \end{tabular}
   \end{center}
   \thispagestyle{empty}
@@ -96,7 +97,6 @@
   {\zihao{-4}  \@keywordsen}
   \pagenumbering{Roman} % 罗马数字页码
   \setcounter{page}{1} % 重置页码
-  \clearpage
 }
 
 \newcommand{\keywordszh}[1]{\gdef\@keywordszh{#1}}
@@ -118,7 +118,6 @@
   \noindent
   {\zihao{-4} \bfseries \hei 关键词\quad ：}
   {\zihao{-4} \song \@keywordszh}
-  \clearpage
 }
 
 \renewcommand\thesection{\arabic{chapter}.\arabic{section}} % 章节编号格式
@@ -173,16 +172,53 @@
 \renewcommand{\contentsname}{\hfill\bfseries\Large \zihao{-2} \hei \bfseries 目\quad 录\hfill}   
 \renewcommand{\cftaftertoctitle}{\hfill}
 
-% ---------- 中文章节目录条目配置 ----------
+
+% ---------- 目录条目格式 ----------
+% \renewcommand{\cftchapfont}{\zihao{-4} \song} % 章节标题格式
+\renewcommand{\cftsecfont}{\zihao{-4} \song} % 小节标题格式
+\renewcommand{\cftsubsecfont}{\zihao{-4} \song} % 小小节标题格式
+% ---------- 目录缩进设置 ----------
+% \renewcommand{\cftchapindent}{0pt} % 章节缩进
+\renewcommand{\cftsecindent}{2.5em} % 小节缩进
+\renewcommand{\cftsubsecindent}{5em} % 小小节缩进
+% ---------- 目录页码格式 ----------
+% \renewcommand{\cftchappagefont}{\zihao{-4} \song} % 章节页码格式
+\renewcommand{\cftsecpagefont}{\zihao{-4} \song} % 小节页码格式
+\renewcommand{\cftsubsecpagefont}{\zihao{-4} \song} % 小小节页码格式
+% ---------- 目录引导线格式 ----------
+% \renewcommand{\cftchapleader}{\titlerule*[0.25pc]{.}} % 章节引导线格式
+\renewcommand{\cftsecleader}{\titlerule*[0.25pc]{.}} % 小节引导线格式
+\renewcommand{\cftsubsecleader}{\titlerule*[0.25pc]{.}} % 小小节引导线格式
+% ---------- 目录条目间距 ----------
+% \renewcommand{\cftbeforechapskip}{0pt} % 章节条目间距
+\renewcommand{\cftbeforesecskip}{0pt} % 小节条目间距
+\renewcommand{\cftbeforesubsecskip}{0pt} % 小小节条目间距
+
+% ---------- 章节目录条目配置 ----------
 \titlecontents{chapter}[0pt] % 层级名称
-  {\addvspace{6pt} \zihao{-4} \song} % 整体格式（小四号宋体）
+  {\zihao{-4} \song} % 整体格式（小四号宋体）
   {} % 标签格式
   {} 
-  {\titlerule*[0.5pc]{.}\contentspage} % 引导线 + 页码（点线引导）
-  [\addvspace{3pt}] % 条目间距
+  {\titlerule*[0.25pc]{.}\contentspage} % 引导线 + 页码（点线引导）
+  % [\addvspace{0pt}] % 条目间距
+% % ---------- 小节目录条目配置 ----------
+% \titlecontents{section}[1.5em] % 层级名称
+%   {\zihao{-4} \song} % 整体格式（小四号宋体）
+%   {\thecontentslabel \quad} % 标签格式
+%   {1em} 
+%   {\titlerule*[0.5pc]{.}\contentspage} % 引导线 + 页码（点线引导）
+%   % [\addvspace{0pt}] % 条目间距
+% % ---------- 小小节目录条目配置 ----------
+% \titlecontents{subsection}[3.5em] % 层级名称
+%   {\zihao{-4} \song} % 整体格式（小四号宋体）
+%   {\thecontentslabel \quad} % 标签格式
+%   {}
+%   {\titlerule*[0.5pc]{.}\contentspage} % 引导线 + 页码（点线引导）
+%   % [\addvspace{0pt}] % 条目间距
 
 % ---------- 生成目录命令 ----------
 \newcommand{\toc}{
+  \clearpage
   \begingroup
   \singlespacing
   \setstretch{1.25} % 1.25倍行距
@@ -193,6 +229,7 @@
   \pagenumbering{arabic} % 阿拉伯数字页码
   \setcounter{chapter}{0} % 重置章节计数器
 }
+
 
 % ---------- 参考文献命令 ----------
 \bibliographystyle{gbt7714-numerical}
