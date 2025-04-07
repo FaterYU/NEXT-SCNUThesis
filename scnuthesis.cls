@@ -17,6 +17,7 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{fontspec}
 \RequirePackage{hyperref}
+\RequirePackage{mathptmx}
 \RequirePackage{gbt7714}
 \RequirePackage{booktabs}
 \RequirePackage{graphicx}
@@ -38,7 +39,7 @@
 \newcommand{\li}{\CJKfamily{zhli}}        % 隶书
 \newcommand{\you}{\CJKfamily{zhyou}}      % 幼圆
 
-\setmainfont{Times New Roman}
+% \setmainfont{Times New Roman}
 
 \newcommand{\studentid}[1]{\def\@studentid{#1}}
 \newcommand{\majorclass}[1]{\def\@majorclass{#1}}
