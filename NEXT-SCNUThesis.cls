@@ -6,7 +6,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsfonts}
-\RequirePackage{geometry}
+\RequirePackage[margin=1in]{geometry}
 \RequirePackage{ctex}
 \RequirePackage{array}
 \RequirePackage{indentfirst}
@@ -133,6 +133,7 @@
   {0pt} % 标签与标题间距
   {\zihao{-2}  \bfseries} % 标题字体
 
+\titlespacing*{\chapter}{0pt}{-50pt}{20pt}
 
 % ====== section 标题左对齐 ======
 \titleformat{\section}
