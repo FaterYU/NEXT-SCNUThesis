@@ -12,13 +12,11 @@ jobs:
         with:
           root_file: example.tex
           latexmk_use_lualatex: true
-          pre_compile: |
-            apt-get install ttf-mscorefonts-installer -y
+          extra_system_packages: msttcorefonts-installer
       - name: Compile Main LaTeX document
         uses: xu-cheng/latex-action@v3
         # continue-on-error: true
         with:
           root_file: main.tex
           latexmk_use_lualatex: true
-          pre_compile: |
-            apt-get install ttf-mscorefonts-installer -y
+          extra_system_packages: msttcorefonts-installer
