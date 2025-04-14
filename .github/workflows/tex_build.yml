@@ -10,10 +10,12 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: example.tex
+          latexmk_use_lualatex: true
       - name: Compile Main LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
+          latexmk_use_lualatex: true
       # - name: Upload PDF file
       #   uses: actions/upload-artifact@v4
       #   with:
