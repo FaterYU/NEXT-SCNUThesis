@@ -248,7 +248,7 @@
 \renewcommand{\appendix}{%
   \setcounter{chapter}{0} % 重置章节计数器
   \setcounter{section}{0} % 重置小节计数器
-  \renewcommand{\thesection}{.\arabic{section}} % 设置附录小节编号格式
+  \renewcommand{\thesection}{\Alph{section}} % 设置附录小节编号格式
   \clearpage
   \phantomsection
   \addcontentsline{toc}{chapter}{\zihao{-4}  APPENDIX} % 添加附录目录条目
