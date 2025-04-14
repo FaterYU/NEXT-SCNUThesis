@@ -32,6 +32,8 @@
 
 🔥 从英文模板无痛迁移
 
+🔥 持续集成 (Continuous integration) 跟踪修改的有效性
+
 ## 使用方法
 
 📖 [Wiki - How To Use](https://github.com/FaterYU/NEXT-SCNUThesis/wiki/How-To-Use)
@@ -41,8 +43,8 @@
 - [x] 适配纯英文论文
 - [x] GitHub Release 发布
 - [x] Overleaf 私有模板发布
+- [x] GitHub CI
 - [ ] 适配纯中文论文
-- [ ] GitHub CI
 
 ## 反馈
 
@@ -67,3 +69,9 @@
 ## ⭐
 
 [![Star History Chart](https://api.star-history.com/svg?repos=FaterYU/NEXT-SCNUThesis&type=Date)](https://www.star-history.com/#FaterYU/NEXT-SCNUThesis&Date)
+
+## Contribute
+
+1. 提交 [Pull Requests](https://github.com/FaterYU/NEXT-SCNUThesis/pulls)
+2. 确保通过触发的 [Action CI](https://github.com/FaterYU/NEXT-SCNUThesis/actions) ，通过需要 `example.tex` 与 `main.tex` 无 `ERROR`
+3. 等待作者处理
