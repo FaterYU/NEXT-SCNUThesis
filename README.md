@@ -4,7 +4,14 @@
 
 [Overleaf Template | NEXT-SCNUThesis](https://www.overleaf.com/read/cztdbznzmfwm#891a33)
 
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/FaterYU/NEXT-SCNUThesis/tex_build.yml)](https://github.com/FaterYU/NEXT-SCNUThesis/actions/workflows/tex_build.yml)
 [![release](https://img.shields.io/github/v/release/FaterYU/NEXT-SCNUThesis?include_prereleases&style=flat)](https://github.com/FaterYU/NEXT-SCNUThesis/releases/latest)
+
+[![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/FaterYU/NEXT-SCNUThesis)](https://github.com/FaterYU/NEXT-SCNUThesis/issues)
+[![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-closed/FaterYU/NEXT-SCNUThesis)]([https://github.com/FaterYU/NEXT-SCNUThesis/issues](https://github.com/FaterYU/NEXT-SCNUThesis/issues?q=is%3Aissue%20state%3Aclosed))
+
+[![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/FaterYU/NEXT-SCNUThesis)](https://github.com/FaterYU/NEXT-SCNUThesis/pulls)
+[![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr-closed/FaterYU/NEXT-SCNUThesis)](https://github.com/FaterYU/NEXT-SCNUThesis/pulls?q=is%3Aissue%20state%3Aclosed)
 
 <details>
   <summary>动机 & 碎碎念</summary>
