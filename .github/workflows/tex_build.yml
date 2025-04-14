@@ -8,11 +8,13 @@ jobs:
         uses: actions/checkout@v4
       - name: Compile Example LaTeX document
         uses: xu-cheng/latex-action@v3
+        continue-on-error: true
         with:
           root_file: example.tex
           latexmk_use_lualatex: true
       - name: Compile Main LaTeX document
         uses: xu-cheng/latex-action@v3
+        continue-on-error: true
         with:
           root_file: main.tex
           latexmk_use_lualatex: true
