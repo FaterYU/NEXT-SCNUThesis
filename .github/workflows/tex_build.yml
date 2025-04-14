@@ -12,14 +12,17 @@ jobs:
         with:
           root_file: example.tex
           latexmk_use_lualatex: true
+          extra_system_packages: ttf-mscorefonts-installer
+          pre_compile: |
+            echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
+            sudo apt-get update -y
       - name: Compile Main LaTeX document
         uses: xu-cheng/latex-action@v3
         continue-on-error: true
         with:
           root_file: main.tex
           latexmk_use_lualatex: true
-      # - name: Upload PDF file
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: PDF
-      #     path: main.pdf
+          extra_system_packages: ttf-mscorefonts-installer
+          pre_compile: |
+            echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | sudo debconf-set-selections
+            sudo apt-get update -y
