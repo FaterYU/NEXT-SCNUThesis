@@ -2,7 +2,9 @@
 
 华南师范大学本科毕业论文 LaTeX 模板 [更新中]
 
-![release](https://img.shields.io/github/v/release/FaterYU/NEXT-SCNUThesis?include_prereleases&style=flat)
+[Overleaf Template | NEXT-SCNUThesis](https://www.overleaf.com/read/cztdbznzmfwm#891a33)
+
+[![release](https://img.shields.io/github/v/release/FaterYU/NEXT-SCNUThesis?include_prereleases&style=flat)](https://github.com/FaterYU/NEXT-SCNUThesis/releases/latest)
 
 <details>
   <summary>动机 & 碎碎念</summary>
@@ -31,7 +33,7 @@
 
 - [x] 适配纯英文论文
 - [x] GitHub Release 发布
-- [ ] Overleaf 模板发布
+- [x] Overleaf 私有模板发布
 - [ ] 适配纯中文论文
 - [ ] GitHub CI
 
