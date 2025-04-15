@@ -251,6 +251,12 @@
   \renewcommand{\thesection}{\Alph{section}} % 设置附录小节编号格式
   \renewcommand\thesubsection{\Alph{section}.\arabic{subsection}} % 小节编号格式
   \renewcommand\thesubsubsection{\Alph{section}.\arabic{subsection}.\arabic{subsubsection}} % 小小节编号格式
+  \renewcommand{\thefigure}{\thesection.\arabic{figure}}
+  \renewcommand{\thetable}{\thesection.\arabic{table}}
+  \makeatletter
+  \@addtoreset{figure}{section}
+  \@addtoreset{table}{section}
+  \makeatother
   \clearpage
   \phantomsection
   \addcontentsline{toc}{chapter}{\zihao{-4}  APPENDIX} % 添加附录目录条目
