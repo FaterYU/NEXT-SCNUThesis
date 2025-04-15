@@ -274,9 +274,10 @@
     {\zihao{-2}  \bfseries ACKNOWLEDGEMENTS} % 致谢标题
     \vspace{1em}
   \end{center}
-  \zihao{-4}
-  \setlength{\parindent}{2em} % 段首缩进
-  \setlength{\parskip}{1em} % 段间距
+  \zihao{-4} \song
+  \hspace{12pt}
+  \setlength{\parindent}{24pt} % 段首缩进
+  \setlength{\parskip}{0.2em} % 段间距
 }
 
 \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}} % 图编号格式
