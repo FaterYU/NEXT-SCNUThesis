@@ -40,10 +40,6 @@
 \newcommand{\li}{\CJKfamily{zhli}}        % 隶书
 \newcommand{\you}{\CJKfamily{zhyou}}      % 幼圆
 
-
-
-
-
 \setmainfont{Times New Roman}
 
 \AtBeginDocument{\zihao{-4}} % 确保正文字号为小四号
@@ -324,9 +320,9 @@
   \renewcommand{\headrulewidth}{0pt}
 }
 
-\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}} % 图编号格式
-\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}} % 表编号格式
-\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}} % 公式编号格式
+\renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}} % 图编号格式
+\renewcommand{\thetable}{\arabic{chapter}-\arabic{table}} % 表编号格式
+\renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}} % 公式编号格式
 \renewcommand{\thefootnote}{\arabic{footnote}} % 脚注编号格式
 \renewcommand{\figurename}{\zihao{5} Fig.} % 图标题格式
 \renewcommand{\tablename}{\zihao{5} Table} % 表标题格式
