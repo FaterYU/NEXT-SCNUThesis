@@ -267,6 +267,8 @@
 \newcommand{\reference}[1]{%
   \clearpage
   \begingroup
+  \fancyhead{}
+  \renewcommand{\headrulewidth}{0pt}
   \setstretch{1.5} % 1.5倍行距
   \setlength{\parindent}{0pt} % 段首不缩进
   \addcontentsline{toc}{chapter}{\zihao{-4}  REFERENCES} % 添加参考文献目录条目
