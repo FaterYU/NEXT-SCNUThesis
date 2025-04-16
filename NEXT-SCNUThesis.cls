@@ -260,7 +260,10 @@
 
 % ---------- 参考文献命令 ----------
 \bibliographystyle{gbt7714-numerical}
-\renewcommand{\bibname}{\zihao{-2}  REFERENCES} % 参考文献标题
+\renewcommand{\bibname}{
+    \vspace*{1em}
+    {\zihao{-2}  REFERENCES}
+} % 参考文献标题
 \newcommand{\reference}[1]{%
   \clearpage
   \begingroup
