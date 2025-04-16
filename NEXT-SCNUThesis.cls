@@ -31,13 +31,7 @@
 \RequirePackage[ruled, vlined]{algorithm2e}
 \RequirePackage{algpseudocode}
 
-\newcommand{\fontpath}{./font/} 
-
-\setCJKfamilyfont{zhsong}{SIMSUN}[% 覆盖原有zhsong
-  Path = \fontpath,
-  Extension = .TTC,      
-  FontIndex = 0
-]
+\setCJKfamilyfont{zhsong}{SIMSUN.TTC}[Path = ./font/]% 覆盖原有zhsong
 
 \newcommand{\song}{\CJKfamily{zhsong}} % 宋体
 \newcommand{\fs}{\CJKfamily{zhfs}}      % 仿宋
@@ -98,7 +92,7 @@
     {\zihao{4} \song 指导老师：}    & 
       {\zihao{4} \song \makebox[8cm][c]{\@supervisor} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
     {\zihao{4} \song 学生姓名：}   & 
-      {\zihao{4} \song  \makebox[8cm][c]{\@author} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
+      {\zihao{4} \song \makebox[8cm][c]{\@author} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
     {\zihao{4} \song 学\qquad 号：} & 
       {\zihao{4} \song \makebox[8cm][c]{\@studentid} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
     {\zihao{4} \song 学\qquad 院：}    & 
