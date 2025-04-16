@@ -38,6 +38,10 @@
 \newcommand{\li}{\CJKfamily{zhli}}        % 隶书
 \newcommand{\you}{\CJKfamily{zhyou}}      % 幼圆
 
+\setCJKfamilyfont{myfont}{SIMSUN.TTC}
+\newcommand{\shengpi}{\CJKfamily{myfont}}% 生僻字补充字体文件
+
+
 \setmainfont{Times New Roman}
 
 \AtBeginDocument{\zihao{-4}} % 确保正文字号为小四号
@@ -84,9 +88,9 @@
         \parbox[c]{8cm}{\centering \@title} 
         \par\vspace{0.2em}\nointerlineskip\hrule width 8cm height 0.4pt} \\[1em]
     {\zihao{4} \song 指导老师：}    & 
-      {\zihao{4} \song \makebox[8cm][c]{\@supervisor} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
+      {\zihao{4} \shengpi \makebox[8cm][c]{\@supervisor} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
     {\zihao{4} \song 学生姓名：}   & 
-      {\zihao{4} \song \makebox[8cm][c]{\@author} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
+      {\zihao{4} \shengpi \makebox[8cm][c]{\@author} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
     {\zihao{4} \song 学\qquad 号：} & 
       {\zihao{4} \song \makebox[8cm][c]{\@studentid} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
     {\zihao{4} \song 学\qquad 院：}    & 
