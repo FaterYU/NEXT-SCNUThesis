@@ -30,6 +30,7 @@
 \RequirePackage{enumitem}
 \RequirePackage[ruled, vlined]{algorithm2e}
 \RequirePackage{algpseudocode}
+% \RequirePackage{CJK}
 
 \setCJKfamilyfont{zhsong}{SIMSUN.TTC}[Path = ./font/]% 覆盖原有zhsong
 
@@ -110,12 +111,12 @@
   \begin{center}
     {\zihao{-2} \bfseries  ABSTRACT} \\[1em]
   \end{center}
-  \hspace{12pt}
   \zihao{-4}
-  \setlength{\parindent}{24pt}
+  \setlength{\parindent}{4em}
+  \par
   \setstretch{1.5} % 1.5倍行距
   \ignorespaces
-  \setlength{\parskip}{1em}
+  % \setlength{\parskip}{1em}
   \addcontentsline{toc}{chapter}{\zihao{-4}  ABSTRACT}
 }{
   \par
@@ -134,12 +135,12 @@
   \begin{center}
     {\zihao{-2} \bfseries \hei 摘\quad 要} \\[1em]
   \end{center}
-  \hspace{12pt}
   \zihao{-4} \song
-  \setlength{\parindent}{24pt}
+  \setlength{\parindent}{2\ccwd}
+  \par
   \setstretch{1.5} % 1.5倍行距
   \ignorespaces
-  \setlength{\parskip}{1em}
+  % \setlength{\parskip}{1em}
   \addcontentsline{toc}{chapter}{\zihao{-4} \song 摘\quad 要}
 }{
   \par
@@ -313,8 +314,8 @@
     \vspace{1em}
   \end{center}
   \zihao{-4} \song
-  \hspace{12pt}
-  \setlength{\parindent}{24pt} % 段首缩进
+  \setlength{\parindent}{2\ccwd} % 段首缩进
+  \par
   \setlength{\parskip}{0.2em} % 段间距
   \fancyhead{}
   \renewcommand{\headrulewidth}{0pt}
