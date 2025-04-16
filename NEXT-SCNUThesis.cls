@@ -80,7 +80,9 @@
 
     \begin{tabular}{@{}>{\centering\arraybackslash}p{2.5cm}@{}>{\centering\arraybackslash}p{8cm}@{}}
     {\zihao{4} \song 论文题目：}   & 
-      {\zihao{4} \song \makebox[8cm][c]{\@title} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em] % 行间距 1em
+    {\zihao{4} \song 
+        \parbox[c]{8cm}{\centering \@title} 
+        \par\vspace{0.2em}\nointerlineskip\hrule width 8cm height 0.4pt} \\[1em]
     {\zihao{4} \song 指导老师：}    & 
       {\zihao{4} \song \makebox[8cm][c]{\@supervisor} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
     {\zihao{4} \song 学生姓名：}   & 
