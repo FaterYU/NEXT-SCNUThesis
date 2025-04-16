@@ -202,7 +202,7 @@
 
 
 % ---------- 目录标题格式 ----------
-\renewcommand{\contentsname}{\hfill \zihao{-2} \bfseries Contents \hfill}
+\renewcommand{\contentsname}{\vspace*{-50pt}{\hfill \zihao{-2} \bfseries Contents \hfill}}
 % \renewcommand{\cftaftertoctitle}{\hfill}
 
 
