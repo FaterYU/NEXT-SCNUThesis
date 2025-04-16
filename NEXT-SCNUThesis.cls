@@ -31,12 +31,18 @@
 \RequirePackage[ruled, vlined]{algorithm2e}
 \RequirePackage{algpseudocode}
 
+\setCJKfamilyfont{zhsong}{SIMSUN.TTC}[Path = ./font/]% 覆盖原有zhsong
+
 \newcommand{\song}{\CJKfamily{zhsong}} % 宋体
 \newcommand{\fs}{\CJKfamily{zhfs}}      % 仿宋
 \newcommand{\kai}{\CJKfamily{zhkai}}      % 楷体
 \newcommand{\hei}{\CJKfamily{zhhei}}      % 黑体
 \newcommand{\li}{\CJKfamily{zhli}}        % 隶书
 \newcommand{\you}{\CJKfamily{zhyou}}      % 幼圆
+
+
+
+
 
 \setmainfont{Times New Roman}
 
