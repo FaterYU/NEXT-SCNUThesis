@@ -17,7 +17,7 @@
 \RequirePackage{setspace}
 \RequirePackage{fancyhdr}
 \RequirePackage{fontspec}
-\RequirePackage{hyperref}
+\RequirePackage[colorlinks, linkcolor=black, anchorcolor=black, citecolor=black, urlcolor=black, filecolor=black]{hyperref}
 \RequirePackage{gbt7714}
 \RequirePackage{booktabs}
 \RequirePackage{graphicx}
@@ -31,7 +31,6 @@
 \RequirePackage[ruled, vlined]{algorithm2e}
 \RequirePackage{algpseudocode}
 
-
 \newcommand{\song}{\CJKfamily{zhsong}} % 宋体
 \newcommand{\fs}{\CJKfamily{zhfs}}      % 仿宋
 \newcommand{\kai}{\CJKfamily{zhkai}}      % 楷体
@@ -41,36 +40,60 @@
 
 \setmainfont{Times New Roman}
 
+\AtBeginDocument{\zihao{-4}} % 确保正文字号为小四号
+\setstretch{1.25} % 1.25倍行距
+
 \newcommand{\studentid}[1]{\def\@studentid{#1}}
-\newcommand{\majorclass}[1]{\def\@majorclass{#1}}
+\newcommand{\institute}[1]{\def\@institute{#1}}
+\newcommand{\major}[1]{\def\@major{#1}}
 \newcommand{\supervisor}[1]{\def\@supervisor{#1}}
 \def\@studentid{}
-\def\@majorclass{}
+\def\@institute{}
+\def\@major{}
 \def\@supervisor{}
 
-\renewcommand{\maketitle}{%
-  \begin{center}
-    {\zihao{-0} \hei \bfseries 毕 \quad 业\quad 论\quad 文 \par}
-    \vspace{2em}
-    {\zihao{-0} \hei \bfseries 论文封面由学校统一印制 \par}
-  \end{center}
-    \vfill
-  \begin{center}
-    {\zihao{2}  \bfseries \@title \par}
-    \vspace{8em} % 调整标题下方间距
+% 页眉
+\pagestyle{fancy}
+\fancyhead[C]{\@title}
+\fancyhead[L]{}
+\fancyhead[R]{}
+\fancypagestyle{plain}{
+  \pagestyle{fancy}
+}
 
-    \begin{tabular}{@{}>{\centering\arraybackslash}p{4cm}@{}>{\centering\arraybackslash}p{5cm}@{}}
-    {\zihao{3} \fs \bfseries 学生姓名}   & 
-      {\zihao{3} \song \makebox[8cm][c]{\@author} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[2em] % 增加行间距至 2em
-    {\zihao{3} \fs \bfseries 学\qquad 号} & 
-      {\zihao{3} \song \makebox[8cm][c]{\@studentid} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[2em]
-    {\zihao{3} \fs \bfseries 专业班级}    & 
-      {\zihao{3} \song \makebox[8cm][c]{\@majorclass} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[2em]
-    {\zihao{3} \fs \bfseries 指导老师}    & 
-      {\zihao{3} \song \makebox[8cm][c]{\@supervisor} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[2em]
-    {\zihao{3} \fs \bfseries 完成日期}    & 
-      {\zihao{3} \song \makebox[8cm][c]{\@date} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[2em]
-  \end{tabular}
+\renewcommand{\maketitle}{%
+    \quad\vspace{1.8em}
+  \begin{center}
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.95\linewidth]{fig/scnu_thesis_logo.eps}
+    \end{figure}
+    {\zihao{-1} \song \bfseries 本科毕业论文（设计） \par}
+    % \vspace{2em}
+    % {\zihao{-0} \hei \bfseries 论文封面由学校统一印制 \par}
+  \end{center}
+    % \vfill
+    \vspace{8em}
+  \begin{center}
+    % {\zihao{2}  \bfseries \@title \par}
+    % \vspace{8em} % 调整标题下方间距
+
+    \begin{tabular}{@{}>{\centering\arraybackslash}p{2.5cm}@{}>{\centering\arraybackslash}p{8cm}@{}}
+    {\zihao{4} \song 论文题目：}   & 
+      {\zihao{4} \song \makebox[8cm][c]{\@title} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em] % 行间距 1em
+    {\zihao{4} \song 指导老师：}    & 
+      {\zihao{4} \song \makebox[8cm][c]{\@supervisor} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
+    {\zihao{4} \song 学生姓名：}   & 
+      {\zihao{4} \song \makebox[8cm][c]{\@author} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
+    {\zihao{4} \song 学\qquad 号：} & 
+      {\zihao{4} \song \makebox[8cm][c]{\@studentid} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
+    {\zihao{4} \song 学\qquad 院：}    & 
+      {\zihao{4} \song \makebox[8cm][c]{\@institute} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
+    {\zihao{4} \song 专\qquad 业：}    & 
+      {\zihao{4} \song \makebox[8cm][c]{\@major} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
+    {\zihao{4} \song 毕业时间：}    & 
+      {\zihao{4} \song \makebox[8cm][c]{\@date} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
+    \end{tabular}
   \end{center}
   \thispagestyle{empty}
   \clearpage
@@ -86,6 +109,7 @@
   \hspace{12pt}
   \zihao{-4}
   \setlength{\parindent}{24pt}
+  \setstretch{1.5} % 1.5倍行距
   \ignorespaces
   \setlength{\parskip}{1em}
   \addcontentsline{toc}{chapter}{\zihao{-4}  ABSTRACT}
@@ -109,6 +133,7 @@
   \hspace{12pt}
   \zihao{-4} \song
   \setlength{\parindent}{24pt}
+  \setstretch{1.5} % 1.5倍行距
   \ignorespaces
   \setlength{\parskip}{1em}
   \addcontentsline{toc}{chapter}{\zihao{-4} \song 摘\quad 要}
@@ -125,7 +150,7 @@
 \renewcommand\thesubsubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}} % 小小节编号格式
 
 % ====== chapter 标题居中 ======
-\titleformat{\chapter}[display] % 针对 \chapteren 命令
+\titleformat{\chapter}[display] % 针对 \chapter 命令
   {\centering \zihao{-2} \hei \bfseries} % 居中 + 小二号黑体加粗
   {}
   % {\chaptertitlename\ \thechapter} % 标签格式（如“第1章”）
@@ -169,8 +194,8 @@
 
 
 % ---------- 目录标题格式 ----------
-\renewcommand{\contentsname}{\hfill\bfseries\Large \zihao{-2} \hei \bfseries 目\quad 录\hfill}   
-\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\contentsname}{\hfill \zihao{-2} \bfseries Contents \hfill}
+% \renewcommand{\cftaftertoctitle}{\hfill}
 
 
 % ---------- 目录条目格式 ----------
@@ -243,6 +268,8 @@
   \phantomsection
   \bibliography{#1}
   \endgroup
+  \fancyhead{}
+  \renewcommand{\headrulewidth}{0pt}
 }
 
 \renewcommand{\appendix}{%
@@ -264,6 +291,8 @@
     {\zihao{-2}  \bfseries APPENDIX} % 附录标题
     \vspace{1em}
   \end{center}
+  \fancyhead{}
+  \renewcommand{\headrulewidth}{0pt}
   }
 
 \newcommand{\acknowledgements}{%
@@ -278,6 +307,8 @@
   \hspace{12pt}
   \setlength{\parindent}{24pt} % 段首缩进
   \setlength{\parskip}{0.2em} % 段间距
+  \fancyhead{}
+  \renewcommand{\headrulewidth}{0pt}
 }
 
 \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}} % 图编号格式
