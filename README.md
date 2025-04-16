@@ -28,7 +28,10 @@
 
 ## 👀 预览
 
-![preview](https://github.com/user-attachments/assets/2e7ffa9a-6d68-47a2-8764-3ca2a400bea8)
+[example.pdf](https://github.com/user-attachments/files/19780779/example.pdf)
+
+![preview](https://github.com/user-attachments/assets/a0be6ee9-49ba-406d-b5dc-28ca5d753b23)
+
 
 ## 特性
 
@@ -43,6 +46,8 @@
 🔥 持续集成 (Continuous integration) 跟踪修改的有效性
 
 ## 使用方法
+
+**务必阅读后使用**
 
 📖 [Wiki - How To Use](https://github.com/FaterYU/NEXT-SCNUThesis/wiki/How-To-Use)
 

@@ -6,14 +6,23 @@
 % =================
 
 \title{Next SCNU Thesis} % 论文题目
-\author{郑誉} % 姓名
+\supervisor{xxx} % 指导老师
+\author{郑誉} % 学生姓名
 \studentid{20210000000} % 学号
-\majorclass{xxx} % 专业班级
-\supervisor{xxx} % 指导教师
-\date{2025年4月} % 日期
+\institute{xxx} % 学院
+\major{xxx} % 专业
+\date{2025年4月} % 毕业时间
 
 \keywordsen{xxx; xxx; xxx} % 英文关键词
 \keywordszh{xxx, xxx, xxx} % 中文关键词
+
+% #########  重要注意事项  ##########
+% #################################
+% 1. 特别注意图表中的\caption位置,figure的caption要在下方,table的caption要在上方
+% 2. 留意Github更新,https://github.com/FaterYU/NEXT-SCNUThesis
+% 3. 提交前务必给导师检查
+% #################################
+
 
 \begin{document}
     \maketitle
@@ -40,12 +49,14 @@
     % =========
 
     % == 附录 ==
-    % 推荐使用 \include{xxx} 插入附录
+    % 推荐使用 \include{xxx} 插入附录, 把\appendix也放外部tex中避免换页
     \appendix
     \section{Appendix A}
     \section{Appendix B}
     \section{Appendix C}
     % =========
 
+    % == 致谢 ==
+    % 推荐使用 \include{xxx} 插入致谢, 把\acknowledgements也放外部tex中避免换页
     \acknowledgements
 \end{document}
