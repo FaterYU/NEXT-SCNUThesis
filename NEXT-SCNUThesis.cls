@@ -18,7 +18,7 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{fontspec}
 \RequirePackage[colorlinks, linkcolor=black, anchorcolor=black, citecolor=black, urlcolor=black, filecolor=black]{hyperref}
-\RequirePackage{gbt7714}
+\RequirePackage[sort&compress]{gbt7714}
 \RequirePackage{booktabs}
 \RequirePackage{graphicx}
 \RequirePackage{float}
@@ -216,22 +216,27 @@
 % \renewcommand{\cftchapfont}{\zihao{-4} \song} % 章节标题格式
 \renewcommand{\cftsecfont}{\zihao{-4} \song} % 小节标题格式
 \renewcommand{\cftsubsecfont}{\zihao{-4} \song} % 小小节标题格式
+\renewcommand{\cftsubsubsecfont}{\zihao{-4} \song} % 小小节标题格式
 % ---------- 目录缩进设置 ----------
 % \renewcommand{\cftchapindent}{0pt} % 章节缩进
 \renewcommand{\cftsecindent}{2.5em} % 小节缩进
 \renewcommand{\cftsubsecindent}{5em} % 小小节缩进
+\renewcommand{\cftsubsubsecindent}{7.5em} % 小小节缩进
 % ---------- 目录页码格式 ----------
 % \renewcommand{\cftchappagefont}{\zihao{-4} \song} % 章节页码格式
 \renewcommand{\cftsecpagefont}{\zihao{-4} \song} % 小节页码格式
 \renewcommand{\cftsubsecpagefont}{\zihao{-4} \song} % 小小节页码格式
+\renewcommand{\cftsubsubsecpagefont}{\zihao{-4} \song} % 小小节页码格式
 % ---------- 目录引导线格式 ----------
 % \renewcommand{\cftchapleader}{\titlerule*[0.25pc]{.}} % 章节引导线格式
 \renewcommand{\cftsecleader}{\titlerule*[0.25pc]{.}} % 小节引导线格式
 \renewcommand{\cftsubsecleader}{\titlerule*[0.25pc]{.}} % 小小节引导线格式
+\renewcommand{\cftsubsubsecleader}{\titlerule*[0.25pc]{.}} % 小小节引导线格式
 % ---------- 目录条目间距 ----------
 % \renewcommand{\cftbeforechapskip}{0pt} % 章节条目间距
 \renewcommand{\cftbeforesecskip}{0pt} % 小节条目间距
 \renewcommand{\cftbeforesubsecskip}{0pt} % 小小节条目间距
+\renewcommand{\cftbeforesubsubsecskip}{0pt} % 小小节条目间距
 
 % ---------- 章节目录条目配置 ----------
 \titlecontents{chapter}[0pt] % 层级名称
