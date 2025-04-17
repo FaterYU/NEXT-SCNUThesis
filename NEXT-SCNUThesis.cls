@@ -7,7 +7,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{amsfonts}
 \RequirePackage{geometry}
-\geometry{top=1in, bottom=1in, left=1in, right=1in, bindingoffset=0.5cm} % 设置页边距
+\geometry{headheight=0.2in, top=1in, bottom=1in, left=1in, right=1in, bindingoffset=0.5cm} % 设置页边距
 \RequirePackage{ctex}
 \RequirePackage{array}
 \RequirePackage{indentfirst}
@@ -17,7 +17,8 @@
 \RequirePackage{setspace}
 \RequirePackage{fancyhdr}
 \RequirePackage{fontspec}
-\RequirePackage[colorlinks, linkcolor=black, anchorcolor=black, citecolor=black, urlcolor=black, filecolor=black]{hyperref}
+\RequirePackage{hyperref} % 其中颜色框不影响打印, 仅辅助阅读, 若想纯黑则使用下一行替换
+% \RequirePackage[colorlinks, linkcolor=black, anchorcolor=black, citecolor=black, urlcolor=black, filecolor=black]{hyperref}
 \RequirePackage[sort&compress]{gbt7714}
 \RequirePackage{booktabs}
 \RequirePackage{graphicx}
