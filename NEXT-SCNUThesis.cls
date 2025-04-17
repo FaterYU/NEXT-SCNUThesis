@@ -112,12 +112,15 @@
   \end{center}
   \setlength{\parindent}{4em}
   \par
-  \zihao{-4}
-  \setstretch{1.5} % 1.5倍行距
-  \ignorespaces
-  % \setlength{\parskip}{1em}
   \addcontentsline{toc}{chapter}{\zihao{-4}  ABSTRACT}
+  \begin{spacing}{1.5}
+      % 正文字号设置并刷新字体属性
+      \zihao{-4}\selectfont
+      % 忽略环境开始后的空白
+      \ignorespaces
+      % \setlength{\parskip}{1em}
 }{
+  \end{spacing}
   \par
   \vspace{1em}
   \noindent
@@ -137,11 +140,15 @@
   \zihao{-4} \song
   \setlength{\parindent}{2\ccwd}
   \par
-  \setstretch{1.5} % 1.5倍行距
-  \ignorespaces
-  % \setlength{\parskip}{1em}
   \addcontentsline{toc}{chapter}{\zihao{-4} \song 摘\quad 要}
+  \begin{spacing}{1.5}
+      % 正文字号设置并刷新字体属性
+      \zihao{-4} \song \selectfont
+      % 忽略环境开始后的空白
+      \ignorespaces
+      % \setlength{\parskip}{1em}
 }{
+  \end{spacing}
   \par
   \vspace{1em}
   \noindent
