@@ -21,17 +21,16 @@
 ## News 👌
 
 - [ ] 适配纯中文论文
-- [x] **2025/04/14**🗓️ 完成 GitHub CI
-- [x] **2025/04/14**🗓️ Overleaf 私有模板发布
-- [x] **2025/04/07**🗓️ GitHub Release 发布
-- [x] **2025/04/06**🗓️ 适配纯英文论文
+- [x] **25/04/14**🗓️ 完成 GitHub CI
+- [x] **25/04/14**🗓️ Overleaf 私有模板发布
+- [x] **25/04/07**🗓️ GitHub Release 发布
+- [x] **25/04/06**🗓️ 适配纯英文论文
 
 ## 👀 预览
 
-[example.pdf](https://github.com/user-attachments/files/19780779/example.pdf)
+[example.pdf](https://github.com/user-attachments/files/19797473/NEXT_SCNUThesis.pdf)
 
-![preview](https://github.com/user-attachments/assets/a0be6ee9-49ba-406d-b5dc-28ca5d753b23)
-
+![preview](https://github.com/user-attachments/assets/778e8a08-5011-430a-8fd3-273fe29a735d)
 
 ## 特性
 
@@ -71,6 +70,10 @@
 
 🔗 [SCNU-ABD-Thesis-template](https://github.com/kikixiong/SCNU-ABD-Thesis-template)
 
+🔗 [GB/T 7714](https://github.com/zepinglee/gbt7714-bibtex-style)
+
+🔗 [IEEE Conference Template](https://www.overleaf.com/latex/templates/ieee-conference-template/grfzhhncsfqn)
+
 ## ⭐
 
 [![Star History Chart](https://api.star-history.com/svg?repos=FaterYU/NEXT-SCNUThesis&type=Date)](https://www.star-history.com/#FaterYU/NEXT-SCNUThesis&Date)
@@ -78,5 +81,5 @@
 ## Contribute
 
 1. 提交 [Pull Requests](https://github.com/FaterYU/NEXT-SCNUThesis/pulls)
-2. 确保通过触发的 [Action CI](https://github.com/FaterYU/NEXT-SCNUThesis/actions) ，通过需要 `example.tex` 与 `main.tex` 无 `ERROR`
+2. 确保通过触发的 [Action CI](https://github.com/FaterYU/NEXT-SCNUThesis/actions)，通过需要 `example.tex` 与 `main.tex` 无 `ERROR`
 3. 等待作者处理
