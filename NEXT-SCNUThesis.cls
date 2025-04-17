@@ -59,6 +59,9 @@
 \fancyhead[C]{\@title}
 \fancyhead[L]{}
 \fancyhead[R]{}
+\fancyfoot[C]{}
+\fancyfoot[L]{}
+\fancyfoot[R]{\thepage}
 \fancypagestyle{plain}{
   \pagestyle{fancy}
 }
@@ -255,7 +258,10 @@
 % ---------- 生成目录命令 ----------
 \newcommand{\toc}{
   \clearpage
+  \fancyfoot[R]{\text{-} \thepage \text{ -}}
   \begingroup
+  \setcounter{page}{1} % 重置页码
+  \pagenumbering{arabic} % 阿拉伯数字页码
   \singlespacing
   \setstretch{1.25} % 1.25倍行距
   \tableofcontents
@@ -264,6 +270,7 @@
   \setcounter{page}{1} % 重置页码
   \pagenumbering{arabic} % 阿拉伯数字页码
   \setcounter{chapter}{0} % 重置章节计数器
+  \fancyfoot[R]{\thepage}
 }
 
 
@@ -330,9 +337,9 @@
   \renewcommand{\headrulewidth}{0pt}
 }
 
-\renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}} % 图编号格式
-\renewcommand{\thetable}{\arabic{chapter}-\arabic{table}} % 表编号格式
-\renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}} % 公式编号格式
+\renewcommand{\thefigure}{\arabic{chapter}\text{-}\arabic{figure}} % 图编号格式
+\renewcommand{\thetable}{\arabic{chapter}\text{-}\arabic{table}} % 表编号格式
+\renewcommand{\theequation}{\arabic{chapter}\text{-}\arabic{equation}} % 公式编号格式
 \renewcommand{\thefootnote}{\arabic{footnote}} % 脚注编号格式
 \renewcommand{\figurename}{\zihao{5} Fig.} % 图标题格式
 \renewcommand{\tablename}{\zihao{5} Table} % 表标题格式
