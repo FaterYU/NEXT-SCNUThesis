@@ -30,7 +30,6 @@
 \RequirePackage{enumitem}
 \RequirePackage[ruled, vlined]{algorithm2e}
 \RequirePackage{algpseudocode}
-% \RequirePackage{CJK}
 
 \setCJKfamilyfont{zhsong}{SIMSUN.TTC}[Path = ./font/]% 覆盖原有zhsong
 
@@ -111,9 +110,9 @@
   \begin{center}
     {\zihao{-2} \bfseries  ABSTRACT} \\[1em]
   \end{center}
-  \zihao{-4}
   \setlength{\parindent}{4em}
   \par
+  \zihao{-4}
   \setstretch{1.5} % 1.5倍行距
   \ignorespaces
   % \setlength{\parskip}{1em}
@@ -285,6 +284,9 @@
 \renewcommand{\appendix}{%
   \setcounter{chapter}{0} % 重置章节计数器
   \setcounter{section}{0} % 重置小节计数器
+  \setcounter{subsection}{0}
+  \setcounter{subsubsection}{0}
+  \setcounter{secnumdepth}{3}
   \renewcommand{\thesection}{\Alph{section}} % 设置附录小节编号格式
   \renewcommand\thesubsection{\Alph{section}.\arabic{subsection}} % 小节编号格式
   \renewcommand\thesubsubsection{\Alph{section}.\arabic{subsection}.\arabic{subsubsection}} % 小小节编号格式
