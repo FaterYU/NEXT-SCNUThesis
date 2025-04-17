@@ -66,6 +66,9 @@
   \pagestyle{fancy}
 }
 
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+
 \renewcommand{\maketitle}{%
     \quad\vspace{1.8em}
   \begin{center}
@@ -305,7 +308,6 @@
   \setcounter{section}{0} % 重置小节计数器
   \setcounter{subsection}{0}
   \setcounter{subsubsection}{0}
-  \setcounter{secnumdepth}{3}
   \renewcommand{\thesection}{\Alph{section}} % 设置附录小节编号格式
   \renewcommand\thesubsection{\Alph{section}.\arabic{subsection}} % 小节编号格式
   \renewcommand\thesubsubsection{\Alph{section}.\arabic{subsection}.\arabic{subsubsection}} % 小小节编号格式
