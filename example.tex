@@ -48,6 +48,8 @@
         \label{fig:example-figure}
     \end{figure}
 
+    \subsubsection{Example a}
+
     \section{Tables}
     \subsection{Example A}
     This is an \textbf{example} of the Table~\ref{tab:example-table} citation.
@@ -83,11 +85,44 @@
     
     \reference{reference}
     \appendix
-    \section{Section}
-    \subsection{subsection}
-    \subsubsection{subsubsection}
-    \section{Appendix B}
-    \section{Appendix C}
+    \chapter{User Manual}
+    \section{Install}
+    \subsection{Pytorch}
+    \chapter{Maintenance Manual}
+    \section{Figures}
+    \subsection{Example A}
+    This is an example of the Fig~\ref{fig:example-figure} citation.
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.5\textwidth]{fig/transformer.eps}
+        \caption{Example figure}
+        \label{fig:example-figure}
+    \end{figure}
+
+    \section{Tables}
+    \subsection{Example A}
+    This is an \textbf{example} of the Table~\ref{tab:example-table} citation.
+    \begin{table}[htbp]
+        \centering
+        \caption{Example table}
+        \label{tab:example-table}
+        \begin{tabular}{|c|c|}
+            \toprule Column 1 & Column 2 \\
+            \midrule Row 1    & Row 2    \\
+            Row 3             & Row 4    \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \section{Equations}
+    \subsection{Example A}
+    This is an example of the inline equation $E=mc^{2}$.
+    \subsection{Example B}
+    This is an example of the equation
+    \begin{equation}
+        E=mc^{2}
+    \end{equation}
 
     \acknowledgements
     行文至此，落笔为终。

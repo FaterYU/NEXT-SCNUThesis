@@ -31,6 +31,7 @@
 \RequirePackage{enumitem}
 \RequirePackage[ruled, vlined]{algorithm2e}
 \RequirePackage{algpseudocode}
+\RequirePackage{xstring}
 
 \setCJKfamilyfont{zhsong}{SIMSUN.TTC}[Path = ./font/]% 覆盖原有zhsong
 
@@ -67,8 +68,13 @@
   \pagestyle{fancy}
 }
 
-\setcounter{secnumdepth}{4}
+\setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
+
+%—— 追踪是否进入附录 —————————————————————————————————————————
+\newbool{inappendix}
+\setbool{inappendix}{false}
+\preto\appendix{\setbool{inappendix}{true}}
 
 \renewcommand{\maketitle}{%
     \quad\vspace{1.8em}
@@ -163,15 +169,17 @@
   {\zihao{-4} \song \@keywordszh}
 }
 
-\renewcommand\thesection{\arabic{chapter}.\arabic{section}} % 章节编号格式
-\renewcommand\thesubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection}} % 小节编号格式
-\renewcommand\thesubsubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}} % 小小节编号格式
+\renewcommand\thesection{\arabic{chapter}.\arabic{section}} % section编号格式
+\renewcommand\thesubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection}} % subsection编号格式
+\renewcommand\thesubsubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}} % subsubsection编号格式
 
 % ====== chapter 标题居中 ======
 \titleformat{\chapter}[display] % 针对 \chapter 命令
   {\centering \zihao{-2} \hei \bfseries} % 居中 + 小二号黑体加粗
-  {}
-  % {\chaptertitlename\ \thechapter} % 标签格式（如“第1章”）
+  % {}
+  {\ifbool{inappendix}
+     {Appendix~\thechapter}       % 附录时打印“Appendix A”
+     {}}                           % 正文时什么都不打印
   {0pt} % 标签与标题间距
   {\zihao{-2}  \bfseries} % 标题字体
 
@@ -245,7 +253,17 @@
 % ---------- 章节目录条目配置 ----------
 \titlecontents{chapter}[0pt] % 层级名称
   {\zihao{-4} \song} % 整体格式（小四号宋体）
-  {} % 标签格式
+  {%
+    % 取出第一个字符，保存在 \FirstChar
+    \StrChar{\thecontentslabel}{1}[\FirstChar]%
+    % 如果 \FirstChar 是数字（0–9），就清空
+    \IfDecimal{\FirstChar}{%
+      {}
+    }{%
+      % 否则就认为是字母，前面加 “Appendix ”
+      Appendix~\thecontentslabel\quad%
+    }%
+  }
   {} 
   {\titlerule*[0.25pc]{.}\contentspage} % 引导线 + 页码（点线引导）
   % [\addvspace{0pt}] % 条目间距
@@ -263,6 +281,8 @@
 %   {}
 %   {\titlerule*[0.5pc]{.}\contentspage} % 引导线 + 页码（点线引导）
 %   % [\addvspace{0pt}] % 条目间距
+
+
 
 % ---------- 生成目录命令 ----------
 \newcommand{\toc}{
@@ -304,30 +324,14 @@
   \renewcommand{\headrulewidth}{0pt}
 }
 
-\renewcommand{\appendix}{%
-  \setcounter{chapter}{0} % 重置章节计数器
-  \setcounter{section}{0} % 重置小节计数器
-  \setcounter{subsection}{0}
-  \setcounter{subsubsection}{0}
-  \renewcommand{\thesection}{\Alph{section}} % 设置附录小节编号格式
-  \renewcommand\thesubsection{\Alph{section}.\arabic{subsection}} % 小节编号格式
-  \renewcommand\thesubsubsection{\Alph{section}.\arabic{subsection}.\arabic{subsubsection}} % 小小节编号格式
-  \renewcommand{\thefigure}{\thesection.\arabic{figure}}
-  \renewcommand{\thetable}{\thesection.\arabic{table}}
-  \makeatletter
-  \@addtoreset{figure}{section}
-  \@addtoreset{table}{section}
-  \makeatother
-  \clearpage
-  \phantomsection
-  \addcontentsline{toc}{chapter}{\zihao{-4}  APPENDIX} % 添加附录目录条目
-  \begin{center}
-    {\zihao{-2}  \bfseries APPENDIX} % 附录标题
-    \vspace{1em}
-  \end{center}
-  \fancyhead{}
-  \renewcommand{\headrulewidth}{0pt}
-  }
+\preto\appendix{
+  \renewcommand\thesection{\Alph{chapter}.\arabic{section}} % section编号格式
+  \renewcommand\thesubsection{\Alph{chapter}.\arabic{section}.\arabic{subsection}} % subsection编号格式
+  \renewcommand\thesubsubsection{\Alph{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}} % subsubsection编号格式
+  \renewcommand{\thefigure}{\Alph{chapter}\text{-}\arabic{figure}} % 图编号格式
+  \renewcommand{\thetable}{\Alph{chapter}\text{-}\arabic{table}} % 表编号格式
+  \renewcommand{\theequation}{\Alph{chapter}\text{-}\arabic{equation}} % 公式编号格式
+}
 
 \newcommand{\acknowledgements}{%
   \clearpage
